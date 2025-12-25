@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Alive - Protect Our Ocean</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        :root {
+            --primary: #005c97;
+            --secondary: #0083b0;
+            --accent: #4fc3f7;
+            --light: #e3f2fd;
+            --dark: #003c6c;
+            --text: #333333;
+            --white: #ffffff;
+        }
+
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(to right, var(--primary), var(--secondary)); color: var(--white); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; }
+        .logo i { font-size: 2rem; }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { color: var(--white); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 0.5rem 0; position: relative; }
+        nav ul li a:hover { color: var(--accent); }
+        nav ul li a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--accent); transition: width 0.3s ease; }
+        nav ul li a:hover::after { width: 100%; }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+            background-size: cover;
+            background-position: center;
+            height: 80vh; display: flex; align-items: center; text-align: center; color: var(--white);
+        }
+
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block; background-color: var(--accent); color: var(--white);
+            padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600;
+            transition: all 0.3s ease; border: none; cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn:hover { background-color: var(--primary); transform: translateY(-3px); box-shadow: 0 6px 8px rgba(0,0,0,0.15); }
+
+        section { padding: 5rem 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 {
+            font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;
+            position: relative; display: inline-block;
+        }
+        .section-title h2::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 80px; height: 4px; background-color: var(--accent); border-radius: 2px;
+        }
+
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-img { border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .about-img img { width: 100%; transition: transform 0.5s ease; }
+        .about-img:hover img { transform: scale(1.05); }
+
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--dark); }
+
+        .stats { display: grid; grid-template-columns: repeat(4,1fr); gap:2rem; margin-top:3rem; }
+        .stat-item { text-align:center; padding:2rem 1rem; background:var(--white); border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; }
+        .stat-item:hover { transform: translateY(-10px); }
+        .stat-item i { font-size:2.5rem; color:var(--primary); margin-bottom:1rem; }
+
+        .initiatives { background: var(--white); }
+        .initiatives-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+
+        .initiative-img img { width:100%; height:100%; object-fit:cover; }
+
+        .cta { background: linear-gradient(to right, var(--primary), var(--secondary)); color:white; text-align:center; padding:5rem 0; }
+
+        footer { background:var(--dark); color:white; padding:3rem 0 1rem; }
+
+        /* responsive same as原样 … */
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <i class="fas fa-water"></i>
+            <span>Ocean Alive</span>
+        </div>
+        <nav>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#initiatives">Programs</a></li>
+                <li><a href="#get-involved">Join</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <h1>Protect Our Ocean, Preserve Life</h1>
+        <p>Join the movement to save marine ecosystems, reduce pollution, and keep the ocean alive.</p>
+        <a href="#get-involved" class="btn">Join Ocean Alive</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Ocean Alive</h2>
+            <p>We are a global community dedicated to protecting and restoring the world’s oceans.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="">
+            </div>
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>Ocean Alive is committed to safeguarding marine life, fighting plastic pollution, and preserving coral reefs.</p>
+                <p>We work with scientists, volunteers, and environmental organizations across the world to restore ocean health.</p>
+                <p>Our goal is to ensure that the ocean — the source of life — remains alive for future generations.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <i class="fas fa-fish"></i>
+                <h3 class="counter" data-target="5000000">0</h3>
+                <p>Marine Life Protected</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3 class="counter" data-target="80000">0</h3>
+                <p>Active Supporters</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-water"></i>
+                <h3 class="counter" data-target="150">0</h3>
+                <p>Ocean Regions Covered</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-trash"></i>
+                <h3 class="counter" data-target="3000">0</h3>
+                <p>Cleanup Projects</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="initiatives" id="initiatives">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Programs</h2>
+            <p>Key actions we are taking to revive and protect the ocean.</p>
+        </div>
+
+        <div class="initiatives-grid">
+            <div class="initiative-card">
+                <div class="initiative-img">
+                    <img src="https://images.unsplash.com/photo-1527600470139-5b5b0705ec62">
+                </div>
+                <div class="initiative-content">
+                    <h3>Plastic Cleanup</h3>
+                    <p>Removing millions of tons of plastic waste from seas and coastlines worldwide.</p>
+                    <a class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="initiative-card">
+                <div class="initiative-img">
+                    <img src="https://images.unsplash.com/photo-1505739773365-e7ffde5af7b7">
+                </div>
+                <div class="initiative-content">
+                    <h3>Coral Protection</h3>
+                    <p>Restoring coral reefs and protecting fragile underwater ecosystems.</p>
+                    <a class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="initiative-card">
+                <div class="initiative-img">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+                </div>
+                <div class="initiative-content">
+                    <h3>Marine Life Rescue</h3>
+                    <p>Rescuing endangered marine species and protecting biodiversity.</p>
+                    <a class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta" id="get-involved">
+    <div class="container">
+        <h2>Join the Ocean Alive Movement</h2>
+        <p>Your small action can save the blue planet. Let’s protect the ocean together.</p>
+        <a href="#" class="btn">Become a Member</a>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Ocean Alive</h3>
+                <p>Dedicated to protecting oceans, marine life, and the future of our planet.</p>
+                <div class="social-links">
+                    <a><i class="fab fa-facebook-f"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#initiatives">Programs</a></li>
+                    <li><a href="#get-involved">Join</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Actions</h3>
+                <ul class="footer-links">
+                    <li><a>Plastic Cleanup</a></li>
+                    <li><a>Coral Protection</a></li>
+                    <li><a>Marine Rescue</a></li>
+                    <li><a>Ocean Education</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Blue Ocean Center</p>
+                <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
+                <p><i class="fas fa-envelope"></i> contact@oceanalive.org</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Ocean Alive. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.querySelector('.mobile-menu').addEventListener('click',()=>document.querySelector('nav ul').classList.toggle('active'));
+function animateCounters(){
+ const counters=document.querySelectorAll('.counter');const speed=200;
+ counters.forEach(counter=>{
+  const target=+counter.getAttribute('data-target');const count=+counter.innerText;
+  const inc=target/speed;
+  if(count<target){counter.innerText=Math.ceil(count+inc);setTimeout(animateCounters,1);}else{counter.innerText=target;}
+ });
+}
+window.addEventListener('load',animateCounters);
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+ a.addEventListener('click',e=>{
+  e.preventDefault();
+  const t=a.getAttribute('href');if(t==='#')return;
+  const el=document.querySelector(t);
+  if(el){window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});document.querySelector('nav ul').classList.remove('active');}
+ });
+});
+</script>
+</body>
+</html>
